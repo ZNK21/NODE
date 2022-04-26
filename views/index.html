@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="FaviconIcon" href="http://localhost:5000/favicon.ico" type="image/x-icon">
+
+    <style>
+        .top {
+            background-color: #3300b4 !important;
+            display: flex !important;
+            justify-content: center !important;
+            height: 100px !important;
+            align-items: center !important;
+        }
+
+        .buscador {
+            height: 50px !important;
+            width: 45% !important;
+        }
+
+        .table {
+            width: 90% !important;
+            margin-top: 30px !important;
+            font-weight: 700 !important;
+        }
+
+        .data {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        .tcabecera {
+            background-color: #fafafa !important;
+            border: 2px solid #dee2e6 !important;
+            color: #6e6f73 !important;
+        }
+
+        .btn-editar.btn {
+            color: #7729ff;
+            border: 2px solid #782aff;
+            border-color: #782aff;
+            font-weight: 500;
+            width: 100px;
+            height: 45px;
+            border-radius: 15px;
+        }
+
+        .btn-editar.btn:hover {
+            background-color: #7729ff;
+            color: #fff;
+        }
+
+        .btn-borrar.btn {
+            color: red;
+            border: 2px solid red;
+            border-color: red;
+            font-weight: 500;
+            width: 100px;
+            height: 45px;
+            border-radius: 15px;
+        }
+
+        .btn-borrar.btn:hover {
+            color: #fff;
+            background-color: red;
+        }
+
+        .agregar {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        .btn-agregar {
+            color: #ffffff;
+            border: 2px solid #782aff;
+            border-color: #782aff;
+            background-color: #782aff;
+            font-weight: 500;
+            width: 150px;
+            height: 45px;
+            border-radius: 20px;
+        }
+
+        .btn-guardar {
+            color: #ffffff;
+            border: 2px solid #782aff;
+            border-color: #782aff;
+            background-color: #782aff;
+            font-weight: 500;
+            width: 145px;
+            height: 45px;
+            border-radius: 15px;
+        }
+
+        .btn-guardared {
+            color: #ffffff !important;
+            border: 2px solid #782aff !important;
+            border-color: #782aff !important;
+            background-color: #782aff !important;
+            font-weight: 500 !important;
+            width: 145px !important;
+            height: 45px !important;
+            border-radius: 15px !important;
+        }
+
+        .centrarmodal {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+
+        .modalheader {
+            background-color: #f9fafc !important;
+            font-weight: 700 !important;
+            font-size: 20px !important;
+        }
+
+        .modal-dialog {
+            width: 400px !important;
+        }
+
+        .styleinput {
+            border: #c3c4c6 solid 2px;
+            border-radius: 5px !important;
+            width: 85% !important;
+            height: 45px !important;
+        }
+
+        .modal-body {
+            height: 300px !important;
+        }
+
+        .modal-content {
+            border: 0px !important;
+            border-radius: 0px !important;
+        }
+
+        .botones {
+            margin-right: 20px !important;
+        }
+
+        .botones1 {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        .buscador {
+            background-color: white !important;
+            padding-left: 20px !important;
+            background-position-x: 830px !important;
+        }
+
+        .red-border.styleinput {
+            border: 2px solid red;
+        }
+
+        .fa-magnifying-glass {
+            position: relative;
+            right: 40px;
+            color: #a19c99;
+        }
+
+        .fa-pen-to-square {
+            padding-right: 5px;
+        }
+
+        .fa-circle-xmark {
+            padding-right: 5px;
+        }
+
+        .fa-user-plus {
+            padding-right: 5px;
+        }
+
+        .fa-user {
+            color: #a19c99;
+            position: absolute;
+            right: 370px;
+            top: 30px;
+        }
+
+        .fa-phone-flip {
+            color: #a19c99;
+            position: absolute;
+            right: 370px;
+            top: 140px;
+        }
+
+        .fa-envelope {
+            color: #a19c99;
+            position: absolute;
+            right: 370px;
+            top: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="top">
+            <input class="buscador" type="text" placeholder="Buscar...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="data">
+            <table class="table">
+                <thead class="tcabecera">
+                    <tr class="cabecera">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Email</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="contenido">
+                </tbody>
+            </table>
+        </div>
+        <div class="agregar">
+            <button class="btn-agregar"><i class="fa-solid fa-user-plus"></i>Agregar</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCrear">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header centrarmodal modalheader">
+                    Crear usuario
+                </div>
+                <div class="modal-body centrarmodal">
+                    <i class="fa-solid fa-user"></i><i class="fa-solid fa-phone-flip"></i><i
+                        class="fa-solid fa-envelope"></i>
+                    <input type="text" id="nombre" class="styleinput" placeholder="Nombre">
+                    <input type="text" id="apellido" class="styleinput" placeholder="Apellido">
+                    <input type="number" id="telefono" class="styleinput" placeholder="Telefono">
+                    <input type="text" id="email" class="styleinput" placeholder="Email">
+                    <button class="btn-guardar">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modaled"></div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
+    integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="./script.js"></script>
+
+</html>
